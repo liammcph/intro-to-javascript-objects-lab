@@ -22,7 +22,7 @@ const game = {
 ///console.dir(pokemon, { maxArrayLength: null })
 
 
-console.log(pokemon[58])
+//console.log(pokemon[58])
 
 ///console.log(game)
 
@@ -36,7 +36,7 @@ Solve Exercise 3 here:
 */
 
 game.difficulty = 'medium' 
-console.log(game.difficulty);
+//console.log(game.difficulty);
 
 
 /*
@@ -49,7 +49,7 @@ Solve Exercise 4 here:
 */
 const mystarter = pokemon.find(p => p.name === "Bulbasaur");
 game.party.push(mystarter);
-console.log(game.party);
+//console.log(game.party);
 
 
 /*
@@ -65,7 +65,7 @@ game.party.push(pokemon.find(p => p.type === "fire"));
 game.party.push(pokemon.find(p => p.hp === 160));
 game.party.push(pokemon.find(p => p.number === 42));
 
-console.log(game.party);
+//console.log(game.party);
 
 
 /*
@@ -82,7 +82,7 @@ for (let gym of game.gyms) {
         gym.completed = true;}
 }
 
-console.log(game.gyms);
+//console.log(game.gyms);
 
 
 /*
@@ -102,3 +102,32 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
+game.party.splice(game.party.findIndex(p => p.name === "Bulbasaur"), 
+1, 
+pokemon.find(p => p.name === "Ivysaur"));
+//console.log(game.party);
+
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 8 here:
+*/
+
+for (let p of game.party) {
+// console.log(p.name)
+}
+
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 9 here:
+*/
+for (let p of pokemon) {
+    if (p.starter === true){
+        console.log(p.name)}
+}
